@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
     "core-js": "^3.9.0",
     "normalize.css": "^8.0.1",
     "regenerator-runtime": "^0.13.9"
