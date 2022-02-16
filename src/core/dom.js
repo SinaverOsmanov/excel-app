@@ -17,6 +17,10 @@ class Dom {
     return this
   }
 
+  get data() {
+    return this.$el.dataset
+  }
+
   on(eventType, cb) {
     this.$el.addEventListener(eventType, cb)
   }
@@ -35,6 +39,33 @@ class Dom {
       this.$el.appendChild(node)
     }
     return this
+  }
+
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+
+  getCoords() {
+    return this.$el.getBoundingClientRect()
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+
+  css(styles = {}) {
+    // if (!Object.keys(styles).length) {
+    //   return;
+    // }
+    // for (const stylesKey in styles) {
+    //   if (styles[stylesKey] !== undefined) {
+    //     this.$el.style[stylesKey] = styles[stylesKey]
+    //   }
+    // }
+
+    Object.keys(styles).forEach((key) => {
+      this.$el.style[key] = styles[key]
+    })
   }
 }
 
